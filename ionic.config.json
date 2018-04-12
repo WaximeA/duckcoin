@@ -1,0 +1,8 @@
+{
+  "name": "duckcoin",
+  "app_id": "6bdf47f2",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
