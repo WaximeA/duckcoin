@@ -13,5 +13,11 @@
     <p text-justify>
         DuckCoin, c'est la monnaie qui rend aimable, redonne le sourire et change la face du monde.
         Elle a été faite pour des gens sympas, juste comme toi.
-    </p>
+    </p><br>
+    <p>Vous avez selectionné : {{selected.title}}</p>
+    <ion-list>
+        <button ion-item *ngFor="let item of items" (click)="itemSelected(item)">
+            {{ item.title }} vaut {{ item.price }} {{ item.currency }}
+        </button>
+    </ion-list>
 </ion-content>

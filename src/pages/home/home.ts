@@ -7,8 +7,19 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+  selected : any = '';
+  items : any = [];
 
+  constructor(public navCtrl: NavController) {
+    this.items = [
+      {'title':'Bitcoin', 'currency':'btc', 'price':'5000€'},
+      {'title':'Ethereum', 'currency':'eth', 'price':'500€'},
+      {'title':'Ripple', 'currency':'xrp', 'price':'0.4€'}
+    ];
+  }
+
+  itemSelected(item) {
+    this.selected =item;
   }
 
 }
