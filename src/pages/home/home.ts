@@ -3,6 +3,8 @@ import { NavController } from 'ionic-angular';
 import { Chart } from 'chart.js';
 import { TabsPage } from "../tabs/tabs";
 import { LoginPage } from "../login/login";
+import { ModalController } from 'ionic-angular';
+import { TransactionPage } from '../transaction/transaction';
 
 @Component({
   selector: 'page-home',
@@ -12,22 +14,121 @@ export class HomePage {
 
   selected : any = '';
   items : any = [];
+  transactions : any = [];
+  i: any = [];
 
   // Chart.js
   @ViewChild('lineCanvas') lineCanvas;
   lineChart: any;
 
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, public modalCtrl: ModalController) {
     this.items = [
       {'title':'Bitcoin', 'currency':'btc', 'price':'5000€'},
       {'title':'Ethereum', 'currency':'eth', 'price':'500€'},
       {'title':'Ripple', 'currency':'xrp', 'price':'0.4€'}
     ];
+    this.transactions = [
+      {
+        'sender': 'charles',
+        'recipient': 'maxime',
+        'amount': 100,
+      },
+      {
+        'sender': 'charles',
+        'recipient': 'raphael',
+        'amount': 100,
+      },
+      {
+        'sender': 'charles',
+        'recipient': 'doreen',
+        'amount': 100,
+      },
+      {
+        'sender': 'charles',
+        'recipient': 'louis-joseph',
+        'amount': 100,
+      },
+      {
+        'sender': 'charles',
+        'recipient': 'elise',
+        'amount': 100,
+      },
+      {
+        'sender': 'charles',
+        'recipient': 'germain',
+        'amount': 100,
+      },
+      {
+        'sender': 'charles',
+        'recipient': 'anthony',
+        'amount': 100,
+      },
+      {
+        'sender': 'charles',
+        'recipient': 'pol',
+        'amount': 100,
+      },
+      {
+        'sender': 'charles',
+        'recipient': 'vincent',
+        'amount': 100,
+      },
+      {
+        'sender': 'charles',
+        'recipient': 'nicolas',
+        'amount': 100,
+      },
+      {
+        'sender': 'charles',
+        'recipient': 'kevin',
+        'amount': 100,
+      },
+      {
+        'sender': 'charles',
+        'recipient': 'willy',
+        'amount': 100,
+      },
+      {
+        'sender': 'charles',
+        'recipient': 'elodie',
+        'amount': 100,
+      },
+      {
+        'sender': 'charles',
+        'recipient': 'adrien',
+        'amount': 100,
+      },
+      {
+        'sender': 'charles',
+        'recipient': 'romain',
+        'amount': 100,
+      },
+      {
+        'sender': 'charles',
+        'recipient': 'quentin',
+        'amount': 100,
+      },
+      {
+        'sender': 'charles',
+        'recipient': 'jean-etienne',
+        'amount': 100,
+      },
+      {
+        'sender': 'charles',
+        'recipient': 'gael',
+        'amount': 100,
+      }
+    ];
   }
 
-  itemSelected(item) {
-    this.selected =item;
+  openModal(transaction) {
+    let modal = this.modalCtrl.create(TransactionPage, { 'transaction': transaction });
+    modal.present();
+  }
+
+  itemSelected(transactions) {
+    this.selected = transactions;
   }
 
   gotoHome() {

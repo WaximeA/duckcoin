@@ -7,6 +7,7 @@ import { ChartsModule } from 'ng2-charts';
 import { PrehomePage } from '../pages/prehome/prehome';
 import { LoginPage } from '../pages/login/login';
 import { HomePage } from '../pages/home/home';
+import { TransactionPage } from '../pages/transaction/transaction';
 import { BlastingPage } from '../pages/blasting/blasting';
 import { WalletPage } from '../pages/wallet/wallet';
 import { ProfilePage } from '../pages/profile/profile';
@@ -22,6 +23,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     PrehomePage,
     LoginPage,
     HomePage,
+    TransactionPage,
     BlastingPage,
     WalletPage,
     ProfilePage,
@@ -39,6 +41,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     PrehomePage,
     LoginPage,
     HomePage,
+    TransactionPage,
     BlastingPage,
     WalletPage,
     ProfilePage,

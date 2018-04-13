@@ -38,7 +38,24 @@
                 </ion-card>
             </ion-col>
         </ion-row>
+        <ion-row>
+            <ion-col col-12>
+                <!--<ion-list>-->
+                    <!--<button ion-item *ngFor="let transaction of transactions" (click)="itemSelected(transaction)">-->
+                         <!--{{ transaction.recipient}} recive ${{ transaction.amount }}  from {{transaction.sender}}-->
+                    <!--</button>-->
+                <!--</ion-list>-->
+                <ion-list>
+                    <ion-item *ngFor="let transaction of transactions, let i = index" (click)="itemSelected(transaction)">
+                        <ion-thumbnail item-start>
+                            <img src="../../assets/imgs/wax.jpg">
+                        </ion-thumbnail>
+                        <h2>{{ transaction.recipient}}</h2>
+                        <p>recive <b>{{ transaction.amount | currency }}</b> from {{transaction.sender}}</p>
+                        <button ion-button item-end (click)="openModal(transaction)">View</button>
+                    </ion-item>
+                </ion-list>
+            </ion-col>
+        </ion-row>
     </ion-grid>
-
-
 </ion-content>
