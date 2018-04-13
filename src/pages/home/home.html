@@ -1,17 +1,31 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
+  <ion-navbar color="duckcoin">
+    <ion-title>DuckCoin</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+    <div text-center>
+        <div>
+            <div>
+                <button ion-button (click)="gotoLogin()" color="duckcoin">Login</button>
+            </div>
+            <div>
+                <p><img src="../../assets/imgs/logo-duck.jpg" alt="" width="150"></p>
+            </div>
+        </div>
+
+        <h2>Welcome to DuckCoin</h2>
+        <p>The cryptocurrency with a beak. WORK IN PROGRESS</p>
+    </div>
+    <p text-justify>
+        DuckCoin, c'est la monnaie qui rend aimable, redonne le sourire et change la face du monde.
+        Elle a été faite pour des gens sympas, juste comme toi.
+    </p><br>
+    <p>Vous avez selectionné : {{selected.title}}</p>
+    <ion-list>
+        <button ion-item *ngFor="let item of items" (click)="itemSelected(item)">
+            {{ item.title }} vaut {{ item.price }} {{ item.currency }}
+        </button>
+    </ion-list>
 </ion-content>
