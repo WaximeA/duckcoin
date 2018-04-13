@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { TabsPage } from "../tabs/tabs";
 import { ProfilePage } from "../profile/profile";
+import { LoadingController } from 'ionic-angular';
 
 /**
  * Generated class for the LoginPage page.
@@ -17,7 +18,7 @@ import { ProfilePage } from "../profile/profile";
 })
 export class LoginPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public loadingCtrl: LoadingController) {
   }
 
   ionViewDidLoad() {
@@ -32,6 +33,11 @@ export class LoginPage {
   };
 
   postData() {
+    let loader = this.loadingCtrl.create({
+      content: "Please wait...",
+      duration: 3000
+    });
+    loader.present();
     this.navCtrl.push(ProfilePage, TabsPage);
   }
 
