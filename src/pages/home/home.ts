@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { TabsPage } from "../tabs/tabs";
+import { LoginPage } from "../login/login";
 
 @Component({
   selector: 'page-home',
@@ -22,4 +24,11 @@ export class HomePage {
     this.selected =item;
   }
 
+  gotoHome() {
+    this.navCtrl.push(TabsPage);
+  }
+
+  gotoLogin() {
+    this.navCtrl.push(LoginPage);
+  }
 }

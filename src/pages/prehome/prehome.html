@@ -1,0 +1,27 @@
+<!--
+  Generated template for the PrehomePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="duckcoin">
+    <ion-title>Prehome</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding scroll="false">
+    <section class="login-container" text-center>
+        <div class = "col">
+            <p><img src="../../assets/imgs/logo-duck.jpg" alt="" width="150"></p>
+        </div>
+        <div class = "col button-row">
+            <button ion-button (click)="gotoLogin()" color="duckcoin">Login</button>
+        </div>
+        <div class = "col">
+            <button ion-button (click)="gotoHome()" color="duckcoin">Go to home</button>
+        </div>
+    </section>
+</ion-content>
