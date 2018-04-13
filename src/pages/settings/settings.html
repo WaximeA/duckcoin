@@ -14,5 +14,30 @@
 
 
 <ion-content padding>
-    <h1>Settings</h1>
+    <ion-list>
+        <h3>Duckcoin settings</h3>
+        <ion-item>
+            <ion-label><span><ion-icon name="flash"></ion-icon> Blasting mode</span></ion-label>
+            <ion-select [(ngModel)]="blasting-mode">
+                <ion-option value="pickaxe">Pickaxe (normal)</ion-option>
+                <ion-option value="gold-pickaxe">Gold pickaxe (faster)</ion-option>
+                <ion-option value="drilling-machine">Drilling machine (light speed)</ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label><span><ion-icon name="cash"></ion-icon> Currency</span></ion-label>
+            <ion-select [(ngModel)]="currency">
+                <ion-option value="eur">EUR</ion-option>
+                <ion-option value="usd">USD</ion-option>
+                <ion-option value="yen">YEN</ion-option>
+            </ion-select>
+        </ion-item>
+    </ion-list>
+    <br>
+    <p>Vous avez selectionné : {{selected.title}}</p>
+    <ion-list>
+        <button ion-item *ngFor="let item of items" (click)="itemSelected(item)">
+            {{ item.title }} vaut {{ item.price }} {{ item.currency }}
+        </button>
+    </ion-list>
 </ion-content>

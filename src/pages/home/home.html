@@ -5,27 +5,57 @@
 </ion-header>
 
 <ion-content padding>
-    <div text-center>
-        <div>
-            <div>
-                <button ion-button (click)="gotoLogin()" color="duckcoin">Login</button>
-            </div>
-            <div>
-                <p><img src="../../assets/imgs/logo-duck.jpg" alt="" width="150"></p>
-            </div>
-        </div>
-
-        <h2>Welcome to DuckCoin</h2>
-        <p>The cryptocurrency with a beak. WORK IN PROGRESS</p>
-    </div>
-    <p text-justify>
-        DuckCoin, c'est la monnaie qui rend aimable, redonne le sourire et change la face du monde.
-        Elle a été faite pour des gens sympas, juste comme toi.
-    </p><br>
-    <p>Vous avez selectionné : {{selected.title}}</p>
-    <ion-list>
-        <button ion-item *ngFor="let item of items" (click)="itemSelected(item)">
-            {{ item.title }} vaut {{ item.price }} {{ item.currency }}
-        </button>
-    </ion-list>
+    <ion-grid>
+        <ion-row>
+            <ion-col col-3>
+                <button ion-button small (click)="gotoLogin()" color="primary">Login</button>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col col-12>
+                <div text-center>
+                    <p><img src="../../assets/imgs/logo-duck.jpg" alt="" width="50"></p>
+                </div>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col col-12>
+                <div text-center>
+                    <h2>Welcome to DuckCoin</h2>
+                    <p>The cryptocurrency with a beak. WORK IN PROGRESS</p>
+                </div>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col col-12>
+                <ion-card >
+                    <ion-card-header>
+                        Stock rate
+                    </ion-card-header>
+                    <ion-card-content>
+                        <canvas #lineCanvas width="500" height="500"></canvas>
+                    </ion-card-content>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col col-12>
+                <!--<ion-list>-->
+                    <!--<button ion-item *ngFor="let transaction of transactions" (click)="itemSelected(transaction)">-->
+                         <!--{{ transaction.recipient}} recive ${{ transaction.amount }}  from {{transaction.sender}}-->
+                    <!--</button>-->
+                <!--</ion-list>-->
+                <ion-list>
+                    <ion-item *ngFor="let transaction of transactions, let i = index" (click)="itemSelected(transaction)">
+                        <ion-thumbnail item-start>
+                            <img src="../../assets/imgs/wax.jpg">
+                        </ion-thumbnail>
+                        <h2>{{ transaction.recipient}}</h2>
+                        <p>recive <b>{{ transaction.amount | currency }}</b> from {{transaction.sender}}</p>
+                        <button ion-button item-end (click)="openModal(transaction)">View</button>
+                    </ion-item>
+                </ion-list>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
 </ion-content>
