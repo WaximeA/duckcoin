@@ -6,6 +6,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { BlastingPage } from '../pages/blasting/blasting';
 import { WalletPage } from '../pages/wallet/wallet';
+import { ProfilePage } from '../pages/profile/profile';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -17,6 +18,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     BlastingPage,
     WalletPage,
+    ProfilePage,
     TabsPage
   ],
   imports: [
@@ -29,6 +31,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     BlastingPage,
     WalletPage,
+    ProfilePage,
     TabsPage
   ],
   providers: [
