@@ -15,5 +15,14 @@
 
 <ion-content padding>
     User profile
-    <button ion-button (click)="gotoHome()">Go to home</button>
+    <button ion-button (click)="gotoHome()" color="duckcoin">Go to home</button>
+    <ion-fab right bottom>
+        <button ion-fab color="duckcoin"><ion-icon name="arrow-dropleft"></ion-icon></button>
+        <ion-fab-list side="left">
+            <a href="#"><button ion-fab><ion-icon name="logo-linkedin"></ion-icon></button></a>
+            <a href="#"><button ion-fab><ion-icon name="logo-twitter"></ion-icon></button></a>
+            <a href="#"><button ion-fab><ion-icon name="logo-facebook"></ion-icon></button></a>
+            <a href="#"><button ion-fab><ion-icon name="logo-github"></ion-icon></button></a>
+        </ion-fab-list>
+    </ion-fab>
 </ion-content>

@@ -34,4 +34,10 @@
         </ion-item>
     </ion-list>
     <br>
+    <p>Vous avez selectionné : {{selected.title}}</p>
+    <ion-list>
+        <button ion-item *ngFor="let item of items" (click)="itemSelected(item)">
+            {{ item.title }} vaut {{ item.price }} {{ item.currency }}
+        </button>
+    </ion-list>
 </ion-content>
