@@ -12,6 +12,7 @@ import { BlastingPage } from '../pages/blasting/blasting';
 import { WalletPage } from '../pages/wallet/wallet';
 import { ProfilePage } from '../pages/profile/profile';
 import { SettingsPage } from '../pages/settings/settings';
+import { ComponentsModule } from '../components/components.module';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -33,7 +34,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    ChartsModule
+    ChartsModule,
+    ComponentsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
+const apiUrl='https://duckcoin.charlesen.fr';
 
 /**
  * Generated class for the TransactionComponent component.
@@ -12,11 +15,16 @@ import { Component } from '@angular/core';
 })
 export class TransactionComponent {
 
-  text: string;
+  transactions: any = [];
 
-  constructor() {
-    console.log('Hello TransactionComponent Component');
-    this.text = 'Hello World';
+  constructor(private http: HttpClient) {
+    // Get content with Http Get request
+    this.http.get(`${apiUrl}/transactions`).subscribe(
+      data => {
+        this.transactions = data['transactions'];
+      }, err => {
+        console.log("Une erreur s'est produite.");
+      });
   }
 
 }
