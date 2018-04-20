@@ -1,0 +1,7 @@
+<div>
+    <h2>Liste des transactions</h2>
+    <div *ngFor="let transaction of transactions">
+        <h3>{{ transaction.recipient | titlecase }}</h3>
+        <p>recive <b>{{ transaction.amount | currency }}</b> from {{transaction.sender}}</p>
+    </div>
+</div>
