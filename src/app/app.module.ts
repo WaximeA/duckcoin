@@ -13,6 +13,7 @@ import { WalletPage } from '../pages/wallet/wallet';
 import { ProfilePage } from '../pages/profile/profile';
 import { SettingsPage } from '../pages/settings/settings';
 import { ComponentsModule } from '../components/components.module';
+import { DirectivesModule } from '../directives/directives.module';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -35,7 +36,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     BrowserModule,
     IonicModule.forRoot(MyApp),
     ChartsModule,
-    ComponentsModule
+    ComponentsModule,
+    DirectivesModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
